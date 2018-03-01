@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": ".",
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "devPkg/*"
+      ]
+    }
+  },
+  "include": [
+    "devPkg/**/*.ts",
+    "devPkg/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

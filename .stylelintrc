@@ -1,0 +1,10 @@
+{
+  "rules": {
+      "indentation": 2,
+      "selector-list-comma-newline-after": "always",
+      "number-leading-zero": "never",
+      "number-no-trailing-zeros": true,
+      "declaration-block-semicolon-newline-after": "always",
+      "selector-class-pattern": "^[-a-z0-9]+$"
+  }
+}
