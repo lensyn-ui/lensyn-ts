@@ -1,3 +1,8 @@
+/*********************************************************************
+ * Created by zhangtao on 2018/3/5
+ * filter
+ *********************************************************************/
+
 let defaultPrecision: number = 2;
 
 function formatValue(value: number, precision: number, unit: string): string {

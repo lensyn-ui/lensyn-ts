@@ -1,6 +1,6 @@
 {
   "name": "lensyn-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue development package for developing large projects based on asynchronous loading module mechanism based on Routing.The development language is Typescript.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "asynchronous",
     "module",
     "typescript",
-    "vue",    
+    "vue",
     "vuex",
     "vue-router"
   ],
