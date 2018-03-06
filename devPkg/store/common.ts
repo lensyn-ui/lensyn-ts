@@ -4,8 +4,8 @@
  *********************************************************************/
 
 interface CommonState {
-    moduleState: string
-};
+    moduleState: string;
+}
 
 const initState: CommonState = {
     moduleState: "模块信息"

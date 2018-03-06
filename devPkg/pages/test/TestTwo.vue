@@ -11,9 +11,16 @@
 </template>
 
 <script lang="ts">
-    
-    import Vue from 'vue'
-    export default Vue.extend({
-    
-    });
+     import { Component, Vue, Watch, Prop } from "vue-property-decorator";
+
+     @Component
+     export default class extends Vue {
+         private test() {
+             let a = 1;
+             switch (a) {
+                 case 1:
+
+             }
+         }
+     };
 </script>

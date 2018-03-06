@@ -5,7 +5,7 @@
 
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const sendRequest = function (request: AxiosRequestConfig, successCallback: Function, errorCallback: Function) {
+const sendRequest = (request: AxiosRequestConfig, successCallback: () => void, errorCallback: () => void): void => {
     axios(request).then((response: AxiosResponse) => {
         successCallback();
     }).catch((error) => {

@@ -5,7 +5,7 @@
 
 const Autofocus = {
     inserted(el: HTMLElement): void {
-        el.focus;
+        el.focus();
     }
 };
 

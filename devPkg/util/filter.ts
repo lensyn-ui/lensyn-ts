@@ -9,7 +9,7 @@ function formatValue(value: number, precision: number, unit: string): string {
     return `${value.toFixed(precision)}${unit}`;
 }
 
-const ByteFormat = function (valueStr: string, precision: number): string {
+const byteFormat = (valueStr: string, precision: number): string => {
     if (typeof precision === "undefined") {
         precision = defaultPrecision;
     }
@@ -44,5 +44,5 @@ const ByteFormat = function (valueStr: string, precision: number): string {
 };
 
 export {
-    ByteFormat
+    byteFormat
 };

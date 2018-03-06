@@ -4,9 +4,14 @@
     "tslint:recommended"
   ],
   "rules": {
-    "quotemark": [true, "double"],
     "indent": [true, "spaces", 4],
+    "variable-name": [true, "check-format", "allow-pascal-case"],
+    "quotemark": false,
+    "eofline": false,
+    "triple-equals": true,
     "interface-name": false,
+    "no-switch-case-fall-through": true,
+    "switch-default": true,
     "no-consecutive-blank-lines": false,
     "prefer-template": [true, "allow-single-concat"],
     "one-variable-per-declaration": false,

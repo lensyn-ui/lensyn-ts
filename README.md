@@ -70,8 +70,8 @@ Vue development package for developing large projects based on asynchronous load
 
 #### 解决方案
 ##### lensyn-ui 引用
-1. 在 `devPkg` 下添加 `types` 目录
-2. 在 `devPkg/types` 目录下添加 `lensyn-ui.d.ts` 文件，文件内容为
+1. 在 `node_modules/@types` 下添加 `lensyn-ui` 目录
+2. 在 `node_modules/@types/lensyn-ui` 目录下添加 `index.d.ts` 文件，文件内容为
 ```ts
 import { PluginFunction } from "vue";
 
@@ -81,5 +81,5 @@ declare class LensynUI {
 
 export default LensynUI;
 ```
-3. 在 `tsconfig.json` 的 `compilerOptions` 下的 `paths` 中添加 `"*": ["devPkg/types/*"]`
+3. 在 `tsconfig.json` 的 `compilerOptions` 下的 `types` 中添加 `"lensyn-ui"`
 

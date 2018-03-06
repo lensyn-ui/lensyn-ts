@@ -26,9 +26,10 @@ import router from './router';
 import Index from "./pages/Index.vue";
 
 /* vue实例化，加载路由、状态管理器、指向模板引擎 */
+/* tslint:disable-next-line */
 new Vue({
     el: "#mainContent",
     router,
     store,
-    render: tplFormat => tplFormat(Index)
+    render: (tplFormat) => tplFormat(Index)
 });
