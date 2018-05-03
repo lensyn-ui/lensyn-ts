@@ -1,7 +1,4 @@
-/*********************************************************************
- * Created by zhangtao on 2018/3/5
- * filter
- *********************************************************************/
+import { formatDate, formatTimeReadable } from "./tool";
 
 let defaultPrecision: number = 2;
 
@@ -43,6 +40,39 @@ const byteFormat = (valueStr: string, precision: number): string => {
     return formatValue(tb, precision, "TB");
 };
 
+let dateFormat = (time: string | number, format: string): string => {
+    if (time === "") {
+        return "";
+    }
+
+    let timeValue = 0;
+
+    if (typeof time === "string") {
+        timeValue = parseInt(time, 10);
+    } else {
+        timeValue = time;
+    }
+
+    return formatDate(format, new Date(timeValue));
+};
+
+let timeFormat = (time: string | number): string => {
+    if (time === "" || typeof time === "undefined") {
+        return "";
+    }
+    let timeValue = 0;
+
+    if (typeof time === "string") {
+        timeValue = parseInt(time, 10);
+    } else {
+        timeValue = time;
+    }
+
+    return formatTimeReadable(timeValue);
+};
+
 export {
-    byteFormat
+    byteFormat,
+    dateFormat,
+    timeFormat
 };

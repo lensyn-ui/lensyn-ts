@@ -1,17 +1,22 @@
-/*********************************************************************
- * Created by zhangtao on 2018/3/5
- * 测试页面的路由
- *********************************************************************/
+/*ts文件应该是定义路由之类的文件?*/
+import {AsyncComponent} from "vue";
+import {RouteConfig} from "vue-router";
 
-import { AsyncComponent} from "vue";
-import { RouteConfig } from "vue-router";
-
-const Test: AsyncComponent = (): any => import("../pages/test/TestOne.vue");
-const TestTwo: AsyncComponent = (): any => import("../pages/test/TestTwo.vue");
+const TestIndex: AsyncComponent = (): any => {
+    return import("../pages/test/Index.vue");
+};
+const TestData: AsyncComponent = (): any => {
+    return import("../pages/test/TestData.vue");
+};
 
 const routes: RouteConfig[] = [
-    { path: "/", component: Test },
-    { path: "/test-two", component: TestTwo }
+    {
+        /*里面的参数是干嘛的?*/
+        path: "/test", component: TestIndex, children: [
+        {path: "", component: TestData},
+        {path: "testData", component: TestData}
+    ]
+    }
 ];
 
 export default routes;

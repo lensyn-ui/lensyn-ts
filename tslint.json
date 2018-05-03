@@ -1,8 +1,11 @@
 {
-  "defaultSeverity": "warning",
   "extends": [
     "tslint:recommended"
   ],
+  "env": {
+    "node": true
+  },
+  "parser": "typescript-eslint-parser" ,
   "rules": {
     "indent": [true, "spaces", 4],
     "variable-name": [true, "check-format", "allow-pascal-case"],
@@ -18,7 +21,10 @@
     "trailing-comma": false,
     "object-literal-sort-keys": false,
     "prefer-const": false,
+    "class-name": false,
     "ordered-imports": false,
+    "only-arrow-functions": false,
+    "no-console": false,
     "semicolon": [true, "always"]
   }
 }

@@ -4,23 +4,22 @@
 
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ChunkCleanPlugin = require("./ChunkCleanPlugin");
 
 module.exports = {
     entry: {
         "all.min": "./devPkg/main.ts"
     },
-    
+
     output: {
         path: path.join(__dirname, './static'),
         publicPath: '/static/',
         filename: '[name].js',
-        libraryTarget: 'umd',
-        library: 'lensyn-ui',
-        umdNamedDefine: true
+        chunkFilename: "[name].[hash:8].js"
     },
     
     resolve: {
-        extensions: ['.js', '.vue', '.json', '.ts']
+        extensions: ['.js', '.vue', '.json', '.ts', '.css']
     },
 
     module: {
@@ -33,7 +32,8 @@ module.exports = {
             },
 
             {
-                test: /\.less$/,
+                test: /\.less$|\.css$/,
+                include: [path.resolve(__dirname, "devPkg")],
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -45,8 +45,8 @@ module.exports = {
 
             {
                 test: /\.ts$/,
-                exclude: /node_modules|vue\/src/,
                 loader: 'ts-loader',
+                include: [path.resolve(__dirname, "devPkg")],
                 options: {
                   appendTsSuffixTo: [/\.vue$/]
                 }
@@ -55,12 +55,13 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 enforce: 'pre',
+                include: [path.resolve(__dirname, "devPkg")],
                 loader: 'tslint-loader'
             },
 
             {
                 test: /\.js$/,
-                exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+                include: [path.resolve(__dirname, "devPkg")],
                 loader: 'babel-loader'
             },
             
@@ -75,6 +76,24 @@ module.exports = {
         ]
     },
     plugins: [
+        new ChunkCleanPlugin(path.join(__dirname, './static')),
         new ExtractTextPlugin('./style/main.css')
-    ]
+    ],
+
+    devServer: {
+        proxy: {
+            "/api": {
+                //target: "http://192.168.13.106:20929",
+                target: "http://192.168.2.200:20929",
+                // target: "http://192.168.16.188:20929",
+                pathRewrite: {"^/api": ""},
+                secure: false
+            },
+            /*
+            "/api/kylin": {
+                target: "http://192.168.2.224:7070"
+            }
+            */
+        }
+    }
 };

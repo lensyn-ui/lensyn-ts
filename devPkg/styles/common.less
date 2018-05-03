@@ -1,7 +1,6 @@
 /*********************************************************************
  * Created by deming-su on 2017/12/30
  *********************************************************************/
-
 @import "base";
 
 /* 通用颜色值定义 ---start--- */
@@ -16,157 +15,795 @@
 @slateBlue: #9E90D7; //图表紫色
 @turquoise: #6FCB97; //图表绿宝色
 @salmon: #FF516C; //图表淡红色
-@linkText:  #C52D2D;//开关背景色
+@linkText: #C52D2D; //开关背景色
 @bg-color: #F0F3F4;
+@font-danger: #C52D2d;
+@border-color: #dcdcdc;
 /* 通用颜色值定义 ---end--- */
 
 /* 通用样式方法 ---start--- */
 
 /* 颜色属性 */
 .color(@color: @white) {
-    color: @color;
+  color: @color;
 }
 
 /* 背景色属性 */
 .bg-color(@color: @white) {
-    background-color: @color;
+  background-color: @color;
 }
 
 /* border 属性 */
 .border(@width: 1px, @type: solid, @color: @border-table) {
-    border: @width @type @color;
+  border: @width @type @color;
 }
 
 /* 边框属性 */
 .bd-color(@color) {
-    border-color: @color;
+  border-color: @color;
 }
 
 /* 触摸样式 */
 .touch() {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* 文字截断 */
 .text-overflow-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*transition动画函数定义*/
 .transition(@type: all;@time: .2s;@status: linear) {
-    -webkit-transition: @type @time @status;
-    -o-transition: @type @time @status;
-    transition: @type @time @status;
+  -webkit-transition: @type @time @status;
+  -o-transition: @type @time @status;
+  transition: @type @time @status;
 }
 
 /* transform */
 .transform(@type) {
-    -webkit-transform: @type;
-    -moz-transform: @type;
-    -ms-transform: @type;
-    -o-transform: @type;
-    transform: @type;
+  -webkit-transform: @type;
+  -moz-transform: @type;
+  -ms-transform: @type;
+  -o-transform: @type;
+  transform: @type;
 }
 
 /*boxshadow样式函数*/
 .shadow(@size1: 0;@size2: 0;@size3: 20px;@color: rgba(51, 51, 51, .4)) {
-    -webkit-box-shadow: @size1 @size2 @size3 @color;
-    -moz-box-shadow: @size1 @size2 @size3 @color;
-    box-shadow: @size1 @size2 @size3 @color;
+  -webkit-box-shadow: @size1 @size2 @size3 @color;
+  -moz-box-shadow: @size1 @size2 @size3 @color;
+  box-shadow: @size1 @size2 @size3 @color;
 }
 
 /* 倒角函数 */
 .border-radius(@size: 5px;) {
-    -webkit-border-radius: @size;
-    border-radius: @size;
+  -webkit-border-radius: @size;
+  border-radius: @size;
 }
 
 /*透明度函数*/
 .opacity (@size: 0.5;@size2: 50) {
-    filter: alpha(opacity=@size2);
-    -moz-opacity: @size;
-    -khtml-opacity: @size;
-    -webkit-opacity: @size;
-    opacity: @size;
+  filter: alpha(opacity=@size2);
+  -moz-opacity: @size;
+  -khtml-opacity: @size;
+  -webkit-opacity: @size;
+  opacity: @size;
 }
 
 .font-size10 () {
-    font-size: 12px;
-    .transform(scale(.75));
-    *font-size: 9px;
+  font-size: 12px;
+  .transform(scale(.75));
+  *font-size: 9px;
 }
+
+.arrow-top(@dir: top;@size: 6px;@color:#999) {
+  width: 0;
+  height: 0;
+  border-bottom: solid @size @color;
+  border-left: solid @size transparent;
+  border-right: solid @size transparent;
+}
+
+;
+
+/* 下箭头样式 */
+.arrow-bottom(@size: 6px;@color:#999 ) {
+  width: 0;
+  height: 0;
+  border-top: solid @size @color;
+  border-left: solid @size transparent;
+  border-right: solid @size transparent;
+}
+
+/* 左箭头样式 */
+.arrow-left(@size: 6px;@color:#999 ) {
+  width: 0;
+  height: 0;
+  border-right: solid @size @color;
+  border-bottom: solid @size transparent;
+  border-top: solid @size transparent;
+}
+
+/* 右箭头样式 */
+.arrow-right(@size: 6px;@color:#999 ) {
+  width: 0;
+  height: 0;
+  border-left: solid @size @color;
+  border-bottom: solid @size transparent;
+  border-top: solid @size transparent;
+}
+
 /* 通用样式方法 ---end--- */
 
+.iconfont() {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 多栏布局 --- start ---*/
+.dock {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  .dock-item {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .dock-body {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    width: 5000px;
+  }
+}
+
+/* 多栏布局 --- end ---*
+
+/* 页面变量 --- start --- */
+@title-prefix-line-color: #407DD1;
+
+@navigator-bg-color: #27508D;
+@navigator-link-active-color: #59A7E6;
+@navigator-bg-light-color: #16aad8;
+
+@page-header-height: 50px;
+@page-menu-width: 180px;
+@page-menu-collapse-width: 32px;
+
+@section-distance: 20px;
+
+@widget-horizontal-padding: 15px;
+@widget-horizontal-middle-padding: 10px;
+@widget-horizontal-mini-padding: 5px;
+@widget-vertical-padding: 10px;
+@widget-vertical-margin: 15px;
+@widget-horizontal-margin: 16px;
+
+@view-header-bg-color: #F5F6FA;
+@view-header-height: 36px;
+@view-horizontal-padding: 20px;
+@view-vertical-padding: 20px;
+@view-title-bottom: 20px;
+@view-title-height: 32px;
+
+@view-section-aside-width: 222px;
+@view-section-marigin: 20px;
+@view-section-bg: #F7F7F7;
+@view-section-content-horizontal-padding: 20px;
+
+@section-title-height: 46px;
+@section-vertical-padding: 20px;
+@section-mini-vertical-padding: 10px;
+
+@dialog-title-height: 48px;
+@dialog-footer-height: 52px;
+
+@form-widget-height: 32px;
+@form-widget-mini-height: 24px;
+@form-widget-select-width: 128px;
+@form-widget-input-width: 128px;
+@form-widget-caledar-width: 130px;
+
+@form-control-height: 36px;
+@form-control-widget-height: 32px;
+@form-label-distance: 12px;
+
+@tab-height: 30px;
+@tab-width: 100px;
+
+@disabled-input-color: #eee;
+
+/* 页面变量 --- end --- */
+
 /* 所有页面布局样式 ---start--- */
-.application-container{
-    position: relative;
+.application-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  > .navigator-container {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    >.navigator-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        z-index: 8;
-        transition: width .2s linear;
-        &.navigator-collapse {
-            width: 180px;
-        }
-        &.navigator-small {
-            width: 32px;
-        }
+    height: @page-header-height;
+    line-height: @page-header-height;
+    font-size: 1.5em;
+    background: @navigator-bg-light-color;
+
+    .logo {
+      float: left;
+      width: @page-menu-width;
+      height: @page-header-height;
+      color: @white;
+      font-size: 1.8rem;
+      .bg-color(#27508d);
+      text-align: center;
     }
-    >.menu-container {
-        position: fixed;
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        width: 180px;
-        z-index: 5;
-        transition: width .2s linear;
-        &.menu-collapse {
-            width: 32px;
+
+    .brand {
+      float: left;
+      .clearfix();
+
+      > li {
+        float: left;
+        margin: 0 20px;
+        color: #fff;
+
+        &.iconfont {
+          cursor: pointer;
+
+          &.back {
+            .transform(rotate(90deg));
+          }
+
+          &.forward {
+            .transform(rotate(-90deg));
+          }
         }
+
+        &.search {
+          position: relative;
+
+          .icon-sousuo {
+            position: absolute;
+            z-index: 2;
+            top: 1px;
+            right: 6px;
+            font-size: 12px;
+            cursor: pointer;
+          }
+
+          .ls-input {
+            input {
+              height: 20px;
+              font-size: 12px;
+              //background-color: #0D2D5C;
+              border-width: 0;
+              //color: #fff;
+
+              &::-webkit-input-placeholder {
+                color: #fff;
+              }
+              &::-moz-placeholder {
+                color: #fff;
+              }
+              &:-moz-placeholder {
+                color: #fff;
+              }
+              &::-ms-input-placeholder {
+                color: #fff;
+              }
+            }
+          }
+
+        }
+      }
     }
-    >.router-container {
-        position: fixed;
-        top: 50px;
-        right: 0;
-        bottom: 0;
-        left: 180px;
-        z-index: 6;
-        transition: all .2s linear;
-        &.full-screen {
-            top: 0;
-            left: 0;
+
+    .nav {
+      margin-right: 20px;
+      text-align: right;
+      font-size: 12px;
+      color: @white;
+      //color: #a6b7cf;
+
+      > .nav-btn {
+        cursor: pointer;
+      }
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: 15px;
         }
-        &.menu-collapse {
-            left: 32px;
-        }
-        &.navigator-collapse {
-            top: 0;
-        }
+      }
     }
-}
-.page-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 15px;
-    border: none;
-    .border-radius(0);
-    .bg-color(@bg-color);
-    overflow-x: hidden;
+  }
+
+  > .menu-container {
+    position: fixed;
+    top: @page-header-height;
+    bottom: 0;
+    left: 0;
+    width: @page-menu-width;
+    z-index: 5;
+    .transition(width, .2s, linear);
+    &.menu-collapse {
+      width: @page-menu-collapse-width;
+    }
+  }
+
+  > .view-container {
+    position: fixed;
+    top: @page-header-height;
+    right: 0;
+    bottom: 0;
+    left: @page-menu-width;
+    z-index: 6;
+    transition: all .2s linear;
     overflow-y: auto;
+
+    &.menu-collapse {
+      left: @page-menu-collapse-width;
+    }
+
+    .view {
+      height: 100%;
+      width: 100%;
+      padding: @view-vertical-padding @view-horizontal-padding 0;
+      overflow-y: auto;
+
+      .view-title {
+        padding-bottom: @view-title-bottom;
+        border-bottom: 1px solid @border-color;
+
+        > .title-content {
+          position: relative;
+          height: @view-title-height;
+          line-height: @view-title-height;
+          font-size: 14px;
+          color: @black;
+
+          &:before {
+            content: "";
+            padding: 0 1px;
+            background: @title-prefix-line-color;
+            margin-right: @widget-horizontal-mini-padding;
+          }
+
+          > .btn-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            .button-temp {
+              width: 64px;
+              margin: 0;
+
+              & + .button-temp {
+                margin-left: @widget-horizontal-margin;
+              }
+            }
+          }
+        }
+      }
+
+      .view-header {
+        box-sizing: content-box;
+        padding-top: 10px;
+        height: @view-header-height;
+        line-height: @view-header-height;
+        color: @black-light;
+
+        .path {
+          height: @view-header-height;
+          background-color: @view-header-bg-color;
+          border: 1px solid @border-color;
+        }
+      }
+
+      .view-content {
+        padding-top: 10px;
+        .ls-tabs {
+          margin-top: 20px;
+          height: @tab-height;
+
+          .tab-item {
+            width: @tab-width !important;
+
+            .content {
+              line-height: @tab-height;
+            }
+
+            & + .tab-item {
+              margin-left: 0;
+              border-left-width: 0;
+            }
+
+            &.active {
+              .content {
+                color: #333;
+              }
+            }
+          }
+        }
+
+        > .vue-grid {
+          margin-top: 10px;
+
+          .sub-cell-container {
+            .sub-item {
+              & + .sub-item {
+                margin-left: 20px;
+              }
+            }
+            .iconfont {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 /* 所有页面布局样式 ---end--- */
+.toolbar {
+  color: #666;
+  .clearfix();
+
+  .tool-item {
+    float: left;
+
+    & + .tool-item {
+      margin-left: 10px;
+    }
+
+    &.group {
+      margin-left: 30px;
+    }
+
+    .dock {
+      width: 200px;
+      .dock-body {
+        padding-left: 10px;
+      }
+    }
+
+    .datepicker {
+      input {
+        height: 32px;
+      }
+
+      &:before {
+        cursor: pointer;
+      }
+    }
+
+    .ls-input {
+      width: 200px;
+    }
+
+    .ls-select {
+      input {
+        color: #333;
+      }
+    }
+
+    .search {
+      width: 64px;
+      letter-spacing: 1px;
+
+      .box {
+        span {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+/* 下拉的样式 --- start ---*/
+select {
+  height: 85%;
+  width: 100%;
+  border: 1px solid @border-color;
+  outline: none;
+}
+
+/* 下拉的样式 --- end ---*/
+
+.edit-dialog {
+  > .dialog-content {
+    .body {
+      padding: 20px 32px !important;
+    }
+  }
+}
+
+/* section --- start --- */
+.content-section {
+  width: 100%;
+  height: 100%;
+
+  .section-title {
+    position: relative;
+    height: @section-title-height;
+    line-height: @section-title-height;
+    font-size: 16px;
+    border-bottom: 1px solid @border-color;
+
+    &:before {
+      content: "";
+      padding: 0 1px;
+      background: @title-prefix-line-color;
+      margin-right: @widget-horizontal-mini-padding;
+    }
+
+    .btn-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: @widget-horizontal-mini-padding;
+
+      .button-temp {
+        font-weight: normal;
+      }
+
+      .icon-btn {
+        display: inline-block;
+      }
+    }
+  }
+
+  .section-content {
+    height: calc(~"100%" - @section-title-height);
+    overflow-y: auto;
+  }
+}
+
+/* section --- end --- */
+
+/* view-section --- start --- */
+.view-section {
+  height: 100%;
+  width: 100%;
+  .clearfix();
+
+  > .aside {
+    float: left;
+    height: 100%;
+    width: @view-section-aside-width;
+    overflow: auto;
+    background-color: @view-section-bg;
+    border: 1px solid @border-color;
+  }
+
+  > .content {
+    float: left;
+    height: 100%;
+    width: calc(~"100%" - (@view-section-aside-width + @view-section-marigin));
+    margin-left: @view-section-marigin;
+    background-color: @view-section-bg;
+    border: 1px solid @border-color;
+    overflow: auto;
+
+    .content-title {
+      height: 58px;
+      padding-left: @view-section-content-horizontal-padding;
+      line-height: 58px;
+      font-size: 24px;
+      border-bottom: 1px solid @border-color;
+    }
+
+    .content-section {
+      padding-left: @view-section-content-horizontal-padding;
+      border-bottom: 1px solid @border-color;
+      height: auto;
+
+      .section-title {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+/* view-section --- end --- */
+
+.horizontal-dl {
+  .clearfix();
+
+  dt {
+    float: left;
+    width: 150px;
+    clear: left;
+  }
+
+  dd {
+    min-height: 20px;
+    margin-left: 150px;
+    margin-bottom: 15px;
+  }
+}
+
+/* 一步一步编辑 --- start --- */
+.step-editor-view {
+  height: 100%;
+
+  .step-editor-content {
+    margin-top: 35px;
+  }
+
+  .step-item {
+    .step-item-footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+}
+
+/* 一步一步编辑 --- end --- */
+
+/* 栅格 --- start --- */
+.dwh-row {
+  @column-count: 24;
+  .clearfix();
+  .generate-columns(@count, @i: 1) when (@i <= @count) {
+    .col-@{i} {
+      float: left;
+      min-height: 1px;
+      width: (@i * 100%) / @count;
+    }
+
+    .generate-columns(@count, @i + 1);
+  }
+
+  .generate-columns(@column-count);
+}
+
+/* 栅格 --- end --- */
+
+/* 表格 --- start --- */
+.vue-grid {
+  .multiselect {
+    /* stylelint-disable-next-line */
+    .multiselect__content-wrapper {
+      position: fixed;
+      height: 200px;
+
+      z-index: 999;
+    }
+  }
+
+  .cell-operate {
+    .sub-cell-container {
+      .sub-item + .sub-item {
+        margin-left: 20px;
+      }
+    }
+    .iconfont {
+      font-size: 15px;
+      color: #999;
+      cursor: pointer;
+    }
+  }
+
+  .grid-footer {
+    .footer-cell {
+      .gray-btn {
+        width: 64px !important;
+        letter-spacing: 1px;
+        text-align: center;
+
+        .box {
+          span {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 表格 --- end --- */
+.tree-list {
+  .tree-label {
+    .tree-icon-select tree-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+/* 新的树形控件 --- start --- */
+.tree-ts {
+  .node {
+    .text-overflow-ellipsis();
+  }
+}
+
+/* 新的树形控件 --- end --- */
+
+/* 设置 ls-select 的高度 --- start --- */
+.ls-select-height(@height: 32px) {
+  height: 24px;
+  > div {
+    min-height: 24px !important;
+    input,
+    i {
+      height: 24px !important;
+      line-height: 24px !important;
+    }
+  }
+}
+
+/* 设置 ls-select 的高度 --- end --- */
+
+/* 设置 ls-button --- start --- */
+.view .button-temp,
+.dialog .button-temp {
+  min-width: 64px;
+  .box {
+    span {
+      padding: 0;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+  }
+}
+
+.dialog .button-temp {
+  width: 80px;
+}
+
+/* 设置 ls-button --- end --- */
+
+/* 日志搜索时间段选择样式 --- start --- yangxi 2018/4/26*/
+.time-search {
+  span {
+    font-size: 12px;
+    display: inline-block;
+    padding: 0 10px;
+  }
+  i {
+    font-size: 20px;
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
+}
+
+/* 日志搜索时间段选择样式 --- end --- yangxi 2018/4/26*/
+
+/*表格给一个相对定位  为了便于弹窗  --- start --- yangxi 2018/4/27*/
+.table-log-custom {
+  position: relative;
+  top: 10px;
+  .sub-cell-container {
+    .iconfont {
+      cursor: pointer;
+    }
+  }
+}
+
+/*表格给一个相对定位  为了便于弹窗  --- end --- yangxi 2018/4/27*/

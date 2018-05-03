@@ -6,6 +6,9 @@ module.exports = {
     extends: [
         'plugin:vue/essential'
     ],
+    env: {
+        "node": true
+    },
     rules: {
         "extends": "eslint:recommended",
         "eqeqeq": ["error", "always"],

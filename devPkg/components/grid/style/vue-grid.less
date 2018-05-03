@@ -1,0 +1,363 @@
+.vue-grid {
+  @cell-horizontal-padding: 10px;
+  @border-color: #dcdcdc;
+  @widget-height: 32px;
+  @primary-color: #407DD1;
+  @warning-color: #F47564;
+
+  @header-height: 40px;
+  @header-bg-color: #F5F6FA;
+  @header-font-color: #999;
+
+  @body-row-height: 48px;
+  @body-font-color: #333;
+  @body-hover-color: #f1f7ff;
+  @body-row-active-color: #f1f7ff;
+
+  @footer-height: 48px;
+  @footer-bg-color: #F5F6FA;
+
+  @checkbox-size: 12px;
+  @checkbox-check-width: 6px;
+  @checkbox-check-height: 10px;
+  @checkbox-checked-bg: #407dd1;
+  @checkbox-border-color: #999;
+
+  @radio-size: 20px;
+  @radio-check-bg: #407dd1;
+  @radio-check-size: 12px;
+
+  @pagination-right-margin: 10px;
+  @pagination-font-color: #999;
+  @pagination-widget-margin: 10px;
+
+  border: 1px solid @border-color;
+  color: @body-font-color;
+
+  table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    box-sizing: border-box;
+
+    td,
+    th {
+      padding: 0;
+      box-sizing: border-box;
+      vertical-align: middle;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .header-cell,
+    .body-cell,
+    .footer-cell {
+      padding-left: @cell-horizontal-padding;
+    }
+  }
+
+  .grid-header {
+    background-color: @header-bg-color;
+    border-bottom: 1px solid @border-color;
+    color: @header-font-color;
+    font-weight: normal;
+
+    .grid-row {
+      .header-cell {
+        height: @header-height;
+        letter-spacing: 1px;
+      }
+
+      .column-set {
+        .header-cell {
+          height: @header-height / 2;
+        }
+
+        .layout-row {
+          height: 0;
+          .header-cell {
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .grid-body {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+
+    .grid-content-wrapper {
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .grid-row {
+      border-bottom: 1px solid @border-color;
+
+      .body-cell {
+        height: @body-row-height;
+      }
+
+      &:hover {
+        background-color: @body-hover-color;
+      }
+
+      &.active {
+        background-color: @body-row-active-color;
+      }
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+    
+    .set-scrollbar-container {
+      font-size: 0;
+      overflow: hidden;
+
+      .set-scrollbar {
+        display: inline-block;
+        overflow: auto;
+
+        .set-scrollbar-content {
+          height: 1px;
+        }
+      }
+    }
+  }
+
+  .grid-footer {
+    position: relative;
+    background-color: @footer-bg-color;
+    border-top: 1px solid @border-color;
+
+    .grid-row {
+      .footer-cell {
+        height: @footer-height;
+        overflow: visible;
+      }
+    }
+  }
+
+  &.fixed-grid{
+    position: relative;
+
+    .grid-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: @header-height;
+    }
+
+    .grid-body {
+      margin-top: @header-height;
+      height: calc(~"100%" - @header-height);
+    }
+
+    .grid-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: @footer-height;
+    }
+    
+    .set-scrollbar-container {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &.footer-grid {
+      .grid-body {
+        height: calc(~"100%" - (@header-height + @footer-height));
+        margin-bottom: @footer-height;
+      }
+    }
+  }
+
+  .notice-msg {
+    height: @body-row-height;
+    line-height: @body-row-height;
+    text-align: center;
+    color: @warning-color;
+  }
+
+  .pagination {
+    position: absolute;
+    top: 0;
+    right: @pagination-right-margin;
+    height: @footer-height;
+    line-height: @footer-height;
+    color: @pagination-font-color;
+
+    select {
+      margin: 0 5px;
+      display: inline-block;
+      height: @widget-height;
+      width: 48px;
+      border: 1px solid @border-color;
+    }
+
+    .pagination-msg {
+      display: inline-block;
+      height: @footer-height;
+      line-height: @footer-height;
+      vertical-align: top;
+    }
+
+    .pagination-list {
+      display: inline-block;
+      height: @widget-height;
+      margin-top: (@footer-height - @widget-height) / 2;
+      margin-left: @pagination-widget-margin;
+      line-height: @widget-height;
+      border: 1px solid @border-color;
+
+      &:after {
+        content: "";
+        clear: both;
+      }
+
+      li {
+        float: left;
+        width: @widget-height;
+        height: @widget-height;
+        line-height: @widget-height;
+        text-align: center;
+        cursor: pointer;
+
+        & + li {
+          border-left: 1px solid @border-color;
+        }
+
+        &.active,
+        &:hover {
+          background-color: @primary-color;
+          border-color: @primary-color;
+          color: #fff;
+        }
+      }
+    }
+
+    .pagination-jump {
+      display: inline-block;
+      height: @footer-height;
+      margin-left: 20px;
+      line-height: @footer-height;
+      vertical-align: top;
+
+      input {
+        height: @widget-height;
+        width: @widget-height;
+        padding-left: 5px;
+        border: 1px solid @border-color;
+        outline: none;
+      }
+
+      .jump-btn {
+        margin-left: 12px;
+        display: inline-block;
+        width: @widget-height;
+        height: @widget-height;
+        vertical-align: middle;
+        border: 1px solid @border-color;
+        cursor: pointer;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1UlEQVRYR+2VUQ7CIBBE6Zm4gN7E3gwPxAZvUg8AY0jqh1ioCy5NlP4SMo+Z2e2kDv6mg/XVABgO/JYDWmtjrb1wJuurDmitoZRy3vuzc275BEQCQAFYQggRwu1BiAA8RQHMRGRKEKIAURiAIaI5ByEOsApne/ECsJZoL7aq81wvugHkevFXAHfv/SkdzaID1lpWSXMdAnALIUTxt+XUA+BaWs+iAOxFlFrYEMFm3lvz2zQFKWB8QCnvHgBtv2PuJuRGJO5AzY5mzXmNwN6dATAcGA48ACYhqSFspXR/AAAAAElFTkSuQmCC);
+        background-size: 65%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .input-editor {
+    input {
+      border: 1px solid @border-color;
+      outline: none;
+      padding-left: 5px;
+      line-height: 2em;
+    }
+  }
+
+  .vue-grid-checkbox {
+    position: relative;
+    box-sizing: content-box;
+    width: @checkbox-size;
+    height: @checkbox-size;
+    overflow: hidden;
+    border: 1px solid @checkbox-border-color;
+    background-color: #fff;
+
+    &.checked {
+      background-color: @checkbox-checked-bg;
+      border-color: @checkbox-checked-bg;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: (@checkbox-size - @checkbox-check-width) / 2;
+        top: (@checkbox-size - @checkbox-check-height) / 2;
+        width: @checkbox-check-width;
+        height: @checkbox-check-height;
+        background-color: transparent;
+        border: 2px solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+      }
+    }
+  }
+
+  .vue-grid-radio {
+    position: relative;
+    box-sizing: content-box;
+    width: @radio-size;
+    height: @radio-size;
+    border: 1px solid @border-color;
+    border-radius: 50%;
+    background-color: #fff;
+
+    &.checked {
+      &:before {
+        content: "";
+        position: absolute;
+        top: (@radio-size - @radio-check-size) / 2;
+        left: (@radio-size - @radio-check-size) / 2;
+        width: @radio-check-size;
+        height: @radio-check-size;
+        border-radius: 50%;
+        background-color: @radio-check-bg;
+
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border-radius: 10px;
+    z-index: 999;
+  }
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: #fff;
+    box-shadow: #fff;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
+    border-radius: 10px;
+    &:hover {
+      background-color: #5b5b5b;
+    }
+  }
+}

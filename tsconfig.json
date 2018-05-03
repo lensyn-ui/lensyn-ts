@@ -10,14 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "strictPropertyInitialization": false,
+    "traceResolution": false,
+    "noEmitOnError": false,
     "baseUrl": ".",
-    "types": [
-      "node"
-    ],
     "paths": {
-      "@/*": [
-        "devPkg/*"
-      ]
+      "@/*": [ "devPkg/*"],
+      "*": ["devPkg/types/*"]
     },
     "lib": [
       "es2015",
@@ -30,6 +28,7 @@
     "devPkg/**/*.vue"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "devPkg/types/*.ts"
   ]
 }

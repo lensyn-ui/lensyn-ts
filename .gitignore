@@ -18,3 +18,4 @@ dist/
 .eslintcache
 .classpath
 node_modules/
+.project
