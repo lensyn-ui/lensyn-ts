@@ -1,16 +1,45 @@
-interface CommonState {
-    moduleState: string;
+/*********************************************************************
+ * common Vue store file
+ * Created by deming-su on 2017/12/30
+ *********************************************************************/
+
+import { Module, ActionTree, GetterTree, MutationTree } from "vuex";
+import { UserInfo } from "../types/common";
+
+interface CommonInfo {
+    userInfo?: UserInfo;
 }
 
-const initState: CommonState = {
-    moduleState: "模块信息"
+const initState: CommonInfo = {
+    userInfo: undefined,
 };
 
-const getters  = {
-    moduleState: (state: CommonState) => state.moduleState
+const getters: GetterTree<any, any> = {
+    /* 获取用户信息 */
+    getUserInfo(state): CommonInfo {
+        const { userInfo } = state;
+        return userInfo;
+    }
 };
 
-export default {
+const actions: ActionTree<any, any> = {
+    setUserInfo({commit}, obj: UserInfo): any {
+        commit('mutationUserInfo', obj);
+    }
+};
+
+const mutations: MutationTree<any> = {
+    mutationUserInfo(state, obj: UserInfo) {
+        state.userInfo = obj;
+    }
+};
+
+const namespaced: boolean = true;
+
+export const common: Module<any, any> = {
+    namespaced,
     state: {...initState},
-    getters
+    getters,
+    actions,
+    mutations
 };

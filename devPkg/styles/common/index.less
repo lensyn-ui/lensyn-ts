@@ -1,0 +1,284 @@
+/*********************************************************************
+ * project private common style less file
+ * Created by deming-su on 2017/12/30
+ *********************************************************************/
+
+/* 项目布局 ---start--- */
+.application-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  > .navigator-container {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.5em;
+    background: @bg-hover-primary;
+  }
+
+  > .menu-container {
+    position: fixed;
+    top: 36px;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    z-index: 5;
+    .transition(width, .2s, linear);
+    &.menu-collapse {
+      width: 40px;
+    }
+  }
+
+  > .view-container {
+    position: fixed;
+    top: 36px;
+    right: 0;
+    bottom: 0;
+    left: 180px;
+    z-index: 6;
+    .transition(all, .2s, linear);
+    overflow-y: auto;
+    &.menu-collapse {
+      left: 40px;
+    }
+  }
+}
+
+/* 项目布局 ---end--- */
+
+
+/* 导航样式 ---start--- */
+.navigator-container {
+  >.container {
+    position: relative;
+    height: 36px;
+    .logo {
+      float: left;
+      width: 180px;
+      height: 36px;
+      color: @bg-color-white;
+      font-size: 1.8rem;
+      .bg-color(#27508d);
+      text-align: center;
+    }
+
+    .brand {
+      float: left;
+      .clearfix();
+      > li {
+        float: left;
+        margin: 0 20px;
+        color: #fff;
+
+        &.iconfont {
+          cursor: pointer;
+
+          &.back {
+            .transform(rotate(90deg));
+          }
+
+          &.forward {
+            .transform(rotate(-90deg));
+          }
+        }
+      }
+    }
+    .nav {
+      margin-right: 20px;
+      text-align: right;
+      font-size: 12px;
+      color: @bg-color-white;
+      > .nav-btn {
+        cursor: pointer;
+      }
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+/* 导航样式 ---end--- */
+
+/* 左侧菜单样式 ---start--- */
+.menu-container {
+  @bg-menu: #41485B;
+  @lineSize: 42px;
+  .bg-color(@bg-menu);
+  &.menu-collapse {
+    > .menu-body {
+      > .container > .block {
+        > .txt {
+          padding-left: 7px;
+          overflow: hidden;
+          color: transparent;
+          &.menu-overview:hover {
+            color: transparent;
+          }
+          &:before {
+            margin: 0 6px;
+          }
+          &.menu-icon {
+            >.icon {
+              margin-left: 2px;
+            }
+          }
+        }
+        > .children > .item > .txt {
+          overflow: hidden;
+          font-size: 16px;
+          text-indent: 7px;
+        }
+      }
+    }
+    > .collapse-btn {
+      &:before {
+        .transform(rotate(0deg));
+      }
+    }
+  }
+  > .menu-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .bg-color(@bg-color-dark);
+    .transition();
+    /* 收缩/展开按钮区域 */
+    .menu-header {
+      width: 100%;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      .collapse-icon {
+        display: inline-block;
+        width: 36px;
+        height: 100%;
+        .transition(@time: .3s);
+        background: url("../../images/common/menu.png") center center / 20px 20px no-repeat;
+        .touch();
+        &.collapse {
+          .transform(rotate(270deg));
+        }
+      }
+    }
+    > .container {
+      display: block;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      > .block {
+        display: block;
+        > .txt {
+          display: block;
+          padding-left: 20px;
+          width: 100%;
+          height: @lineSize;
+          line-height: @lineSize;
+          text-align: left;
+          font-size: 14px;
+          color: @bg-color-light;
+          .bg-color(@bg-menu);
+          overflow: hidden;
+          .touch();
+          &:before {
+            position: relative;
+            top: 15px;
+            content: '';
+            float: left;
+            height: @lineSize;
+            width: 20px;
+            margin: 0 15px;
+            .transition();
+          }
+          &.menu-icon {
+            &:before {
+              display: none;
+            }
+            >.icon {
+              display: inline-block;
+              vertical-align: baseline;
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              text-align: center;
+              text-indent: 0;
+              margin: 0 8px 0 15px;
+              .iconfont(@color: @bg-color-light);
+            }
+          }
+          &.menu-overview {
+            &:hover {
+              .bg-color(@bg-button-primary);
+              color: @bg-color-white;
+              &:before {
+                .arrow-right(@color: @bg-color-white);
+              }
+            }
+            &:before {
+              .arrow-right(@color: #B3B6BD);
+            }
+          }
+          &.expand {
+            &.menu-overview {
+              &:before {
+                .arrow-bottom(@color: @bg-color-white);
+              }
+
+            }
+          }
+        }
+        > .children {
+          display: block;
+          height: 0px;
+          overflow: hidden;
+          .transition();
+          > .item {
+            display: block;
+            > .txt {
+              display: block;
+              height: @lineSize;
+              line-height: @lineSize;
+              text-indent: 50px;
+              font-size: 14px;
+              color: @bg-color-light;
+              .bg-color(@bg-color-dark);
+              .touch();
+              &.active {
+                color: @bg-color-white;
+                .bg-color(@bg-button-primary);
+              }
+              &:hover {
+                color: @bg-color-white;
+                .bg-color(@bg-disable-primary);
+              }
+              >.icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                text-indent: 0;
+                margin-right: 10px;
+                .iconfont(@size: 18px,@color: @bg-color-light);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 左侧菜单样式 ---end--- */

@@ -9,7 +9,7 @@ class ChunkCleanPlugin {
     }
 
     apply(compiler) {
-        compiler.plugin("before-compile", (complication, callback) => {
+        compiler.plugin("before-run", (complication, callback) => {
             let files = fs.readdirSync(this.targetPath),
                 chunkFiles = this.pickChunkFileNames(files);
 

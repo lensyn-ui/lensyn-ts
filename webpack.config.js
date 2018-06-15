@@ -33,7 +33,7 @@ module.exports = {
 
             {
                 test: /\.less$|\.css$/,
-                include: [path.resolve(__dirname, "devPkg")],
+                include: [path.resolve(__dirname, "devPkg"), path.resolve(__dirname, "node_modules/lensyn-ui")],
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -79,21 +79,13 @@ module.exports = {
         new ChunkCleanPlugin(path.join(__dirname, './static')),
         new ExtractTextPlugin('./style/main.css')
     ],
-
     devServer: {
         proxy: {
             "/api": {
-                //target: "http://192.168.13.106:20929",
-                target: "http://192.168.2.200:20929",
-                // target: "http://192.168.16.188:20929",
+                target: "http://10.176.155.39:19998",
                 pathRewrite: {"^/api": ""},
                 secure: false
-            },
-            /*
-            "/api/kylin": {
-                target: "http://192.168.2.224:7070"
             }
-            */
         }
     }
 };

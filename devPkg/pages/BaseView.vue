@@ -3,6 +3,8 @@
 
     @Component
     export default class BaseView extends Vue {
+
+        /* 当前用户登录失效 */
         private isLoginExpired(error: any) {
             if (error && error.request && error.request.responseURL.indexOf("login_page") !== -1) {
                 return true;
@@ -10,6 +12,7 @@
             return false;
         }
 
+        /* 处理Ajax请求失败的方法 */
         protected handleRequestError(error: any): void {
             if (this.isLoginExpired(error)) {
                 this.showRequestErrorMsg("登陆失效，请重新登陆");
@@ -26,18 +29,9 @@
             }
         }
 
+        /* 默认提示 */
         protected showRequestErrorMsg(msg = "请求失败，请稍候重试"): void {
-            this.$lensyn.toast.show(msg, "danger");
-        }
-
-        protected resizeView() {
-            let el = this.$el,
-                title = el.querySelector(".view-title") as HTMLElement,
-                header = el.querySelector(".view-header") as HTMLElement,
-                content = el.querySelector(".view-content") as HTMLElement,
-                paddingTop = getComputedStyle(el).getPropertyValue("padding-top");
-
-            content.style.height = (el.clientHeight - parseInt(paddingTop) - title!.offsetHeight - header!.offsetHeight) + "px";
+            this.$lensyn.alarm.show(msg, "danger");
         }
     };
 </script>
