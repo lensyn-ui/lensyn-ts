@@ -11,7 +11,7 @@
     <meta name="Keywords" content="能信, lensyn，ts" />
     <meta name="Description" content="lensyn-ts" />
     <!--设置启用最新浏览器-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <!--解除网络数字电话链接-->
     <meta name="format-detection" content="telephone=no">
@@ -24,6 +24,31 @@
     <!-- build:css ./assets-index.min.css -->
     <link rel="stylesheet" href="./static/assets/font.css" >
     <link rel="stylesheet" href="./static/style/main.css">
+    <script>
+        /* 添加console在IE9下的支持，仅重写了常用的warn，log，error，assert，debug，info */
+        if(!window.console) {
+            window.console = {
+                warn: function() {
+                    // 提示信息
+                },
+                log: function() {
+                    // 提示信息
+                },
+                error: function() {
+                    // 提示信息
+                },
+                assert: function() {
+                    // 提示信息
+                },
+                debug: function() {
+                    // 提示信息
+                },
+                info: function() {
+                    // 提示信息
+                }
+            };
+        }
+    </script>
     <!-- /build -->
 </head>
 

@@ -19,6 +19,9 @@ Vue development package for developing large projects based on asynchronous load
 6. webpack 模块化架构工具
 7. gulp 代码检测及压缩、打码构建工具
 
+## 整体开发流程及开发建议导图
+![avatar](./project-mind.png)
+
 
 ## 目录结构说明
 
@@ -59,6 +62,7 @@ Vue development package for developing large projects based on asynchronous load
 ├    ├    ├    ├── common/            （项目通用样式库，不允许删除）
 ├    ├    ├    ├    ├── index.less    （项目通用样式定义，不允许删除，可以自定义修改）
 ├    ├    ├    ├    ├── index-media   （项目通用样式媒体定义，不允许删除，可以自定义修改）
+├    ├    ├    ├    ├── index-personal（项目通用个性化样式定义，不允许删除，可以自定义修改）
 ├    ├    ├    ├── login/             （项目登录样式，不允许删除，可以自定义修改）
 ├    ├    ├    ├── base.less          （项目基础样式，不允许删除和修改）
 ├    ├    ├    ├── common.less        （项目通用样式定义文件，不允许删除，可以自定义修改）

@@ -8,7 +8,7 @@ const ChunkCleanPlugin = require("./ChunkCleanPlugin");
 
 module.exports = {
     entry: {
-        "all.min": "./devPkg/main.ts"
+        "all.min": ["babel-polyfill","./devPkg/main.ts"]
     },
 
     output: {
