@@ -3,8 +3,107 @@
  * Created by deming-su on 2017/12/30
  *********************************************************************/
 
-/* 加载样式 ---start--- */
+/* 面包屑样式 ---start--- */
 
-/*自定义样式区域*/
+.breadcrumb-container {
+  display: block;
+  position: relative;
+  padding-bottom: 15px;
+  border-bottom: solid 1px @border-color;
+  .cls-float();
+  >.container {
+    float: left;
+    height: 16px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 16px;
+    border-left: solid 1px @primary-color;
+    >.item {
+      float: left;
+      margin-left: 10px;
+      .touch();
+    }
+  }
+  >.btns {
+    float: right;
+    height: 32px;
+    >.refresh {
+      float: left;
+      width: 32px;
+      height: 32px;
+      background-color: @bg-color-light;
+      .border();
+      .touch();
+    }
+  }
+}
 
-/* 加载样式 ---end--- */
+/* 面包屑样式 ---end--- */
+
+/* 面包屑样式 ---end--- */
+
+.pagetips-container {
+  display: block;
+  height: 36px;
+  padding: 0 10px;
+  margin-top: 10px;
+  .border();
+  &.primary {
+    background-color: @bg-primary-alarm;
+  }
+  &.success {
+    background-color: @bg-success-alarm;
+  }
+  &.warning {
+    background-color: @bg-warning-alarm;
+  }
+  &.danger {
+    background-color: @bg-danger-alarm;
+  }
+  >.container {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    color: @primary-color;
+    line-height: 36px;
+    >em {
+      margin-left: 10px;
+      font-style: normal;
+      color: @font-color-light;
+    }
+    >i {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      .border();
+    }
+  }
+}
+
+/* 面包屑样式 ---end--- */
+
+/* 行样式 ---end--- */
+
+.rows-container {
+  display: block;
+  position: relative;
+  .cls-float();
+}
+
+/* 行样式 ---end--- */
+
+/* 列样式 ---end--- */
+
+.columns-container {
+  display: block;
+  float: left;
+  margin-top: 15px;
+  >.contaier {
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* 列样式 ---end--- */

@@ -9,9 +9,6 @@
 import 'babel-polyfill';
 import 'es6-promise/auto';
 
-/* 引入页面样式文件 */
-import './styles/main.less';
-
 /* 加载vue核心组件 */
 import Vue, {CreateElement} from 'vue';
 import Component from 'vue-class-component';
@@ -40,6 +37,9 @@ Vue.use(GlobalComponent);
 import "lensyn-ui/lib/lensyn-ui.css";
 import LensynUI from "lensyn-ui";
 Vue.use(LensynUI);
+
+/* 引入页面样式文件 */
+import './styles/main.less';
 
 /* vue实例化，加载路由、状态管理器、指向模板引擎 */
 /* tslint:disable-next-line */

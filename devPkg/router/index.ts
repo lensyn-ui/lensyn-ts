@@ -11,6 +11,7 @@ import { Menu as MenuData } from "../config";
 /* 导入各个子模块路由 */
 import Login from "./Login";
 import Home from "./Home";
+import Demo from "./Demo";
 
 /* 注入路由 */
 Vue.use(Router);
@@ -19,7 +20,8 @@ Vue.use(Router);
 const router = new Router({routes: [
     { path: "/", redirect: "/Login" },
     ...Login,
-    ...Home
+    ...Home,
+    ...Demo
 ]});
 
 /* 判断是否已经登录 */

@@ -49,16 +49,20 @@
 
         /* navigator 点击事件 */
         private onClickNav(action: string) {
+            debugger;
             switch (action) {
                 case "refresh":
                     this.refreshView();
+                    break;
+                case "logout":
+                    this.$router.push({path: '/login'});
                     break;
                 default:
                     break;
             }
         }
 
-        /* navigator 点击事件 */
+        /* menu 点击事件 */
         private collapseEvt(action: string) {
             switch (action) {
                 case "collapseMenu":

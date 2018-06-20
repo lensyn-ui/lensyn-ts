@@ -1,0 +1,85 @@
+/*********************************************************************
+ * project private common style less file
+ * Created by deming-su on 2017/12/30
+ *********************************************************************/
+
+/* 项目布局 ---start--- */
+
+.input {
+  width: 100%;
+}
+
+.page-box {
+  margin: 10px 0;
+}
+
+.introduce-title {
+  display: block;
+  margin: 10px 0;
+  font-size: 12px;
+  color: @primary-color;
+  font-weight: bold;
+}
+
+.demo-font:before {
+  content: '\e61a';
+  margin-right: 5px;
+  .iconfont();
+  .touch();
+}
+
+.demo-status {
+  width: 56px;
+  border: solid 1px;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 16px;
+  color: @bg-button-success;
+  &.warning {
+    color: @bg-button-warning;
+  }
+  &.danger {
+    color: @bg-button-error;
+  }
+}
+
+.introduce-info {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  border: solid 1px @border-color;
+  box-shadow: 0 0 5px @border-color;
+  >.item {
+    border-bottom: solid 1px @border-color;
+    padding-bottom: 10px;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    >.title {
+      font-size: 14px;
+      color: @primary-color;
+      font-weight: bold;
+    }
+    >.desc {
+      font-size: 12px;
+      color: @font-color;
+    }
+  }
+}
+
+.echarts-box {
+  display: block;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.demo-block {
+  display: block;
+  height: 28px;
+  .border();
+  .border-radius();
+  background: linear-gradient(to right, #000, #fff);
+}
+
+/* 项目布局 ---end--- */

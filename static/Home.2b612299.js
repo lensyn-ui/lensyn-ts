@@ -31,7 +31,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "devPkg\\pages\\home\\Index.vue"
+Component.options.__file = "devPkg\\pages\\home\\base.vue"
 
 /* hot reload */
 if (false) {(function () {

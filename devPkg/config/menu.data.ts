@@ -11,77 +11,183 @@ const MenuData: any[] = [
         cls: "menu-icon menu-home",
         icon: "&#xe622;"
     }, {
-        id: "ID002",
-        name: "数据管控",
+        id: "query",
+        name: "查询展示",
         cls: "menu-overview",
-        link: "/warehouse",
+        link: "",
+        children: [
+            {
+                id: "query1",
+                name: "查询",
+                link: "/query",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "table",
+        name: "表格展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "table0",
+                name: "默认表格",
+                link: "/table",
+                icon: "&#xe61a;"
+            },
+            {
+                id: "table1",
+                name: "分页表格",
+                link: "/pagingtable",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID002",
+        name: "分页展示",
+        cls: "menu-overview",
+        link: "",
         children: [
             {
                 id: "ID0021",
-                name: "仓库视图",
-                link: "/warehouse",
-                icon: "&#xe61a;"
-            }, {
-                id: "ID0023",
-                name: "项目管理",
-                link: "/project-manager",
-                icon: "&#xe61a;"
-            }, {
-
-                id: "ID00232",
-                name: "模型管理",
-                link: "/model-manager",
+                name: "分页",
+                link: "/pagination",
                 icon: "&#xe61a;"
             }
         ]
     }, {
         id: "ID003",
-        name: "智能分析",
+        name: "选择器展示",
         cls: "menu-overview",
-        link: "/analysis",
+        link: "",
         children: [
             {
                 id: "ID0031",
-                name: "我的数据",
-                link: "/analysis",
+                name: "单选",
+                link: "/baseselect",
+                icon: "&#xe61a;"
+            },
+            {
+                id: "ID0032",
+                name: "多选",
+                link: "/multipleselect",
                 icon: "&#xe61a;"
             }
         ]
     }, {
         id: "ID004",
-        name: "统一调度",
+        name: "树展示",
         cls: "menu-overview",
-        link: "/scheduling",
+        link: "",
         children: [
             {
                 id: "ID0041",
-                name: "任务调度",
-                link: "/scheduling",
-                icon: "&#xe61a;"
-            },
-            {
-                id: "ID0042",
-                name: "调度监控",
-                link: "/scheduling/monitor",
+                name: "树",
+                link: "/tree",
                 icon: "&#xe61a;"
             }
         ]
     }, {
         id: "ID005",
-        name: "系统管理",
+        name: "日期选择器展示",
         cls: "menu-overview",
-        link: "/system",
+        link: "",
         children: [
             {
                 id: "ID0051",
-                name: "数据源管理",
-                link: "/system",
+                name: "日期选择器",
+                link: "/date",
                 icon: "&#xe61a;"
-            },
+            }
+        ]
+    }, {
+        id: "ID006",
+        name: "按钮展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
             {
-                id: "ID0052",
-                name: "域管理",
-                link: "/area",
+                id: "ID0061",
+                name: "按钮",
+                link: "/button",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID007",
+        name: "输入框展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID0071",
+                name: "输入框",
+                link: "/input",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID008",
+        name: "选项卡展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID0081",
+                name: "选项卡",
+                link: "/tab",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID009",
+        name: "确认框展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID0091",
+                name: "确认框",
+                link: "/confirm",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID101",
+        name: "弹框展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1011",
+                name: "弹框",
+                link: "/modal",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID102",
+        name: "提示/警示框展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1021",
+                name: "提示/警示框",
+                link: "/alarm",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID103",
+        name: "tooltip展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1031",
+                name: "tooltip",
+                link: "/tooltip",
                 icon: "&#xe61a;"
             }
         ]

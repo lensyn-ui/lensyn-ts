@@ -6,7 +6,8 @@ Vue development package for developing large projects based on asynchronous load
 
 ## 浏览器兼容说明
 
-1. 整体架构支持 >= IE10;
+1. 整体架构支持 >= IE9;
+2. 最佳体验 >= IE10+
 
 ## WEB技术栈
 
@@ -18,6 +19,11 @@ Vue development package for developing large projects based on asynchronous load
 5. Typescript 开发库
 6. webpack 模块化架构工具
 7. gulp 代码检测及压缩、打码构建工具
+
+## demo库需要注意的事情
+1. 在实际项目开发中需要修改pages/home/Index.vue到自己的业务首页；
+2. 修改路由router/index.ts文件中的Demo.ts去掉；
+3. 删除或屏蔽styles/main.less;
 
 ## 整体开发流程及开发建议导图
 ![avatar](./project-mind.png)
