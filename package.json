@@ -4,7 +4,7 @@
   "description": "Vue development package for developing large projects based on asynchronous loading module mechanism based on Routing.The development language is Typescript.",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && webpack-dev-server --inline --hot --no-info --host 192.168.2.130 --port 9000 --profile --open-page index.html",
+    "start": "set NODE_ENV=development && webpack-dev-server --inline --hot --no-info --host localhost --port 9000 --profile --open-page index.html",
     "deploy": "set NODE_ENV=production && webpack --display-error-details --config webpack.config.js && gulp check-code && gulp build"
   },
   "keywords": [
