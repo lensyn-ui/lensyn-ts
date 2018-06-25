@@ -25,7 +25,7 @@
 
 </style>
 <script lang="ts">
-    import { Vue, Component } from "vue-property-decorator";
+    import { Vue, Component, Provide } from "vue-property-decorator";
     import { Breadcrumb, Pagetips } from "../../../components";
 
     @Component({
@@ -35,6 +35,8 @@
         }
     })
     export default class extends Vue {
+        @Provide("key")
+        private Key: string = '';
 
         /**
          * 页面参数释义
@@ -67,6 +69,10 @@
                 desc: `pagingData.total: 总条数, pagingData.current: 当前页数, pagingData.display: 当前显示条数, paginationEvent: 分页控件点击事件`
             }
         ] as any[];
+
+        private mounted(): void {
+
+        }
 
         /* 分页回调点击事件 */
         private pageChange(d: any): void {

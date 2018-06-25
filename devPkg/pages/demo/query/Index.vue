@@ -50,6 +50,8 @@
     import { Vue, Component } from "vue-property-decorator";
     import { Breadcrumb, Pagetips, Row, Column } from "../../../components";
 
+    import {VNode} from "vue";
+
     @Component({
         components: {
             'ls-breadcrumb': Breadcrumb,

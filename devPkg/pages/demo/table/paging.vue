@@ -9,7 +9,7 @@
         <ls-breadcrumb :breadcrumbList="breadList"></ls-breadcrumb>
         <ls-pagetips :pagetips="tipsInfo"></ls-pagetips>
         <div class="introduce-title">简单表格</div>
-        <ls-pagination-grid style="margin-top: 10px; height: 320px;"
+        <ls-pagination-grid style="margin-top: 10px; height: 320px;" ref="gridNode"
                  :datas="testDatas"
                  :columns="testColumnSets"></ls-pagination-grid>
         <div class="introduce-info">
@@ -84,5 +84,9 @@
                 { field: "jobName", label: "334", width: "400px"}
             ]
         ] as any[];
+
+        private mounted(): void {
+            (this.$refs.gridNode as any).refreshGrid();
+        }
     }
 </script>

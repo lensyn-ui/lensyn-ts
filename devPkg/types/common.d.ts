@@ -7,6 +7,7 @@
 interface UserInfo {
     id: string;
     name?: string;
+    cb: (d: any) => void;
 }
 
 /* 接口请求参数 */

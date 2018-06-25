@@ -14,7 +14,7 @@
         <!-- 左侧菜单 ---end--- -->
 
         <!-- 主体路由样式 ---start--- -->
-        <div class="view-container">
+        <div class="view-container" :class="[{'menu-collapse': menuCollapse}]">
             <router-view></router-view>
         </div>
         <!-- 主体路由样式 ---end--- -->
@@ -37,9 +37,11 @@
          * 页面变量定义
          * @define navObj 导航栏数据对象
          * @define menuObj 左侧树数据对象
+         * @define menuCollapse 菜单树是否收起
          */
         private navObj: any = {userName: "", title: ""} as any;
         private menuObj: string = "[]";
+        private menuCollapse: boolean = false;
 
         protected mounted() {
             let currentUser: string = sessionStorage.getItem("currentUser") as string;
@@ -63,10 +65,10 @@
         }
 
         /* menu 点击事件 */
-        private collapseEvt(action: string) {
-            switch (action) {
+        private collapseEvt(action: any) {
+            switch (action.action) {
                 case "collapseMenu":
-                    /* condition */
+                    this.menuCollapse = action.collapse;
                     break;
                 default:
                     break;

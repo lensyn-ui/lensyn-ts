@@ -29,7 +29,7 @@ import router from './router';
 /* 引入容器页面 */
 import Index from "./pages/Index.vue";
 
-/* 加载全局组件 */
+/* 加载全局过滤器/指令 */
 import GlobalComponent from "./components/lensyn-global";
 Vue.use(GlobalComponent);
 

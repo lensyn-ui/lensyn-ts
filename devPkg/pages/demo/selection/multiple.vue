@@ -1,7 +1,7 @@
 /*********************************************************************
-* multiple select component usage
-* Created by deming-su on 2018/6/19
-*********************************************************************/
+ * multiple select component usage
+ * Created by deming-su on 2018/6/19
+ *********************************************************************/
 
 
 <template>
@@ -18,13 +18,11 @@
         </div>
     </div>
 </template>
-<style>
-
-</style>
 <script lang="ts">
     import { Vue, Component } from "vue-property-decorator";
+    import { VueConstructor } from "vue";
+
     import { Breadcrumb, Pagetips } from "../../../components";
-    import {VueConstructor} from "vue";
 
     @Component({
         components: {

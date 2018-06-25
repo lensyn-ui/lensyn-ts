@@ -17,7 +17,7 @@ module.exports = {
         filename: '[name].js',
         chunkFilename: "[name].[hash:8].js"
     },
-    
+
     resolve: {
         extensions: ['.js', '.vue', '.json', '.ts', '.css']
     },
@@ -32,8 +32,23 @@ module.exports = {
             },
 
             {
-                test: /\.less$|\.css$/,
-                include: [path.resolve(__dirname, "devPkg"), path.resolve(__dirname, "node_modules/lensyn-ui")],
+                test: /\.css$/,
+                include: [
+                    path.resolve(__dirname, "node_modules/lensyn-ui")
+                ],
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        'css-loader',
+                    ]
+                })
+            },
+
+            {
+                test: /\.less$/,
+                include: [
+                    path.resolve(__dirname, "devPkg")
+                ],
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -48,7 +63,7 @@ module.exports = {
                 loader: 'ts-loader',
                 include: [path.resolve(__dirname, "devPkg")],
                 options: {
-                  appendTsSuffixTo: [/\.vue$/]
+                    appendTsSuffixTo: [/\.vue$/]
                 }
             },
 
@@ -64,7 +79,7 @@ module.exports = {
                 include: [path.resolve(__dirname, "devPkg")],
                 loader: 'babel-loader'
             },
-            
+
             {
                 test: /\.(png|jpg|gif|ttf|svg|woff|eot)$/,
                 loader: 'url-loader',

@@ -4,20 +4,23 @@
  *********************************************************************/
 
 <template>
-    <div class="rows-container" :gutter="nowGutter" :style="[{'margin-left': `-${nowGutter}px`, 'margin-right': `-${nowGutter}px`}]">
+    <div class="rows-container" :style="[{'margin-left': `-${nowGutter}px`, 'margin-right': `-${nowGutter}px`}]">
         <slot><!-- 嵌入行的内容 --></slot>
     </div>
 </template>
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator";
+    import {Vue, Component, Prop, Provide} from "vue-property-decorator";
 
     @Component({})
     export default class extends Vue {
         @Prop({type: Number, default: 20})
         private gutter: number;
+        @Provide('nowGutter')
+        private nowGutter: number = parseInt(`${this.gutter / 2}`);
 
-        private get nowGutter(): number {
+
+        /*private get nowGutter(): number {
             return parseInt(`${this.gutter / 2}`);
-        }
+        }*/
     }
 </script>

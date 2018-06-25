@@ -58,7 +58,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.30.1",
-    "lensyn-ui": "^1.1.24",
+    "lensyn-ui": "^1.1.26",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "map-stream": "0.0.7",
@@ -87,12 +87,8 @@
   "dependencies": {
     "@types/echarts": "0.0.12",
     "@types/node": "^9.4.7",
-    "brace": "^0.11.1",
-    "konva": "^2.0.3",
     "npm": "^5.8.0",
     "vue-class-component": "^6.2.0",
-    "vue-cute-timeline": "^1.2.4",
-    "vue-datepicker-local": "^1.0.13",
     "vue-property-decorator": "^6.0.0",
     "vuex-class": "^0.3.0"
   }
