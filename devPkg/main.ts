@@ -38,6 +38,10 @@ import "lensyn-ui/lib/lensyn-ui.css";
 import LensynUI from "lensyn-ui";
 Vue.use(LensynUI);
 
+/* 向组件库添加输入框校验规则 */
+import validator from "./util/validate";
+validator(LensynUI);
+
 /* 引入页面样式文件 */
 import './styles/main.less';
 

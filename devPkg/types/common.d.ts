@@ -7,7 +7,7 @@
 interface UserInfo {
     id: string;
     name?: string;
-    cb: (d: any) => void;
+    cb?: (d: any) => void;
 }
 
 /* 接口请求参数 */
@@ -17,6 +17,7 @@ interface RequestData {
     data?: object;
     params?: object;
     contentType?: string;
+    urlParam?: any;
 }
 
 

@@ -23,7 +23,7 @@ let loadingCount = 0;
  * @returns {string} 返回完整请求地址
  */
 const getUrl = (url: string, params?: any): string => {
-    url = url.replace(/({\w+})/g, (key: string): string => params[key]);
+    url = url.replace(/{(\w+)}/g, (reg: string, key: string): string => params[key]);
     return `${UrlConfig.BASE_URL}${url}`;
 };
 
@@ -87,7 +87,7 @@ const isRequestSuccess = (responsdData: AxiosResponse): boolean => {
  * @param errorCallback 失败返回回调函数
  */
 const sendRequest = (request: RequestData, successCallback: SuccessCallback, errorCallback?: ErrorCallback) => {
-    let url = getUrl(request.url),
+    let url = getUrl(request.url, request.urlParam),
         requestData = buildRequestData(request);
 
     requestData.url = url;

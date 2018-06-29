@@ -6,6 +6,7 @@
 import { SuccessCallback, ErrorCallback } from "common.d.ts";
 import { Ajax } from "../util";
 import { UrlConfig } from "../config";
+import axios, {AxiosRequestConfig} from "axios";
 
 /**
  * 用户登陆

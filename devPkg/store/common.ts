@@ -8,10 +8,12 @@ import { UserInfo } from "../types/common";
 
 interface CommonInfo {
     userInfo?: UserInfo;
+    testInfo: string;
 }
 
 const initState: CommonInfo = {
     userInfo: undefined,
+    testInfo: ""
 };
 
 const getters: GetterTree<any, any> = {
@@ -19,10 +21,16 @@ const getters: GetterTree<any, any> = {
     getUserInfo(state): CommonInfo {
         const { userInfo } = state;
         return userInfo;
+    },
+    /* 获取用户信息 */
+    getTestInfo(state): CommonInfo {
+        const { testInfo } = state;
+        return testInfo;
     }
 };
 
 const actions: ActionTree<any, any> = {
+    /* 设置用户信息 */
     setUserInfo({commit}, obj: UserInfo): any {
         commit('mutationUserInfo', obj);
     }
@@ -30,6 +38,7 @@ const actions: ActionTree<any, any> = {
 
 const mutations: MutationTree<any> = {
     mutationUserInfo(state, obj: UserInfo) {
+        state.testInfo = obj.name;
         state.userInfo = obj;
     }
 };

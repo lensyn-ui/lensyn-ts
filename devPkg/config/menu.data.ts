@@ -191,6 +191,32 @@ const MenuData: any[] = [
                 icon: "&#xe61a;"
             }
         ]
+    }, {
+        id: "ID104",
+        name: "checkbox展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1041",
+                name: "checkbox",
+                link: "/checkbox",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID105",
+        name: "侧滑弹出框展示",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1051",
+                name: "sideslip",
+                link: "/sideslip",
+                icon: "&#xe61a;"
+            }
+        ]
     }
 ] as any[];
 

@@ -81,6 +81,16 @@ const Pagingtable: AsyncComponent = (): any => {
     return import(/* webpackChunkName: "Pagingtable"*/"../pages/demo/table/paging.vue");
 };
 
+/* 选择框路由 */
+const Checkbox: AsyncComponent = (): any => {
+    return import(/* webpackChunkName: "Checkbox"*/"../pages/demo/checkbox/Index.vue");
+};
+
+/* 策划弹出框路由 */
+const Sideslip: AsyncComponent = (): any => {
+    return import(/* webpackChunkName: "Sideslip"*/"../pages/demo/sideslip/Index.vue");
+};
+
 const routes: RouteConfig[] = [
     { path: "/query", component: Query, meta: {  layout: "ls-main-layout", requestLogin: true } },
     { path: "/table", component: Table, meta: {  layout: "ls-main-layout", requestLogin: true } },
@@ -96,7 +106,9 @@ const routes: RouteConfig[] = [
     { path: "/confirm", component: Confirm, meta: {  layout: "ls-main-layout", requestLogin: true } },
     { path: "/modal", component: Modal, meta: {  layout: "ls-main-layout", requestLogin: true } },
     { path: "/alarm", component: Alarm, meta: {  layout: "ls-main-layout", requestLogin: true } },
-    { path: "/tooltip", component: Tooltip, meta: {  layout: "ls-main-layout", requestLogin: true } }
+    { path: "/tooltip", component: Tooltip, meta: {  layout: "ls-main-layout", requestLogin: true } },
+    { path: "/sideslip", component: Sideslip, meta: {  layout: "ls-main-layout", requestLogin: true } },
+    { path: "/checkbox", component: Checkbox, meta: {  layout: "ls-main-layout", requestLogin: true } }
 ];
 
 export default routes;

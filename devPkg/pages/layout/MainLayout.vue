@@ -26,6 +26,12 @@
     import { Navigator, Menu } from "../../components";
     import { ConstConfig } from "../../config";
 
+    import { Action, Getter } from "vuex-class";
+
+    import { UserInfo } from "../../types/common";
+
+    const namespace: string = "common";
+
     @Component({
         components: {
             "ls-navigator": Navigator,
@@ -33,6 +39,15 @@
         }
     })
     export default class MainLayout extends Vue {
+        @Action("setUserInfo", { namespace })
+        private setNowUser: (info: UserInfo) => void;
+
+        @Getter("getUserInfo", { namespace })
+        private uInfo: UserInfo;
+
+        @Getter("getTestInfo", { namespace })
+        private testInfo: string;
+
         /**
          * 页面变量定义
          * @define navObj 导航栏数据对象
@@ -45,8 +60,13 @@
 
         protected mounted() {
             let currentUser: string = sessionStorage.getItem("currentUser") as string;
+
+            this.setNowUser({id: "fjdsjfldjsl", name: currentUser} as UserInfo);
+
             this.navObj = {userName: currentUser, title: 'test'} as any;
             this.menuObj = sessionStorage.getItem("menus") || "[]";
+
+            console.log(this.uInfo.name, this.testInfo);
         }
 
         /* navigator 点击事件 */
