@@ -37,14 +37,7 @@
     import { Vue, Component } from "vue-property-decorator";
     import echarts, { ECharts, EChartOption } from "echarts";
 
-    import { Row, Column } from "../../components";
-
-    @Component({
-        components: {
-            'ls-row': Row,
-            'ls-column': Column
-        }
-    })
+    @Component
     export default class extends Vue {
         /**
          * 页面参数释义

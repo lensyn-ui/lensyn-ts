@@ -7,14 +7,10 @@ import Navigator from "./Navigator.vue";
 import Menu from "./Menu.vue";
 import Breadcrumb from "./Breadcrumb.vue";
 import Pagetips from "./Pagetips.vue";
-import Row from "./Row.vue";
-import Column from "./Column.vue";
 
 export {
     Navigator,
     Menu,
     Breadcrumb,
-    Pagetips,
-    Row,
-    Column
+    Pagetips
 };
