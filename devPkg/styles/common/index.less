@@ -305,3 +305,71 @@
   }
 }
 /* 左侧菜单样式 ---end--- */
+
+/* form表单单元样式 ---start--- */
+.search-form-item {
+  .cls-float();
+  .dock-label {
+    float: left;
+    width: 75px;
+    height: 32px;
+    line-height: 32px;
+    &.block {
+      float: none;
+      display: block;
+      width: 100%;
+    }
+    &.right {
+      text-align: right;
+      padding-right: 10px;
+    }
+    >em {
+      position: relative;
+      display: inline-block;
+      vertical-align: sub;
+      margin-right: 5px;
+      color: @error-color;
+      font-style: normal;
+    }
+  }
+  .dock-body {
+    position: relative;
+    margin-left: 75px;
+    .cls-float();
+    &.dock-body-left {
+      position: relative;
+      left: -1px;
+    }
+    &.full {
+      margin-left: 0;
+    }
+    &.mb20 {
+      margin-bottom: 20px;
+    }
+    >.icon,
+    >.txt {
+      cursor: pointer;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      height: 30px;
+      width: 32px;
+      text-align: center;
+      line-height: 30px;
+      .bg-color(@bg-color-light);
+      border-left: solid 1px @border-color;
+      &.border {
+        .border();
+      }
+    }
+    >.icon {
+      .iconfont();
+    }
+    >.txt {
+      width: auto;
+      font-style: normal;
+      padding: 0 15px;
+    }
+  }
+}
+/* form表单单元样式 ---end--- */

@@ -9,29 +9,88 @@
         <ls-breadcrumb :breadcrumbList="breadList"></ls-breadcrumb>
         <ls-pagetips :pagetips="tipsInfo"></ls-pagetips>
         <ls-row :gutter="16">
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+            <ls-column :offset="6" :col="6">
+                <div class="search-form-item">
+                    <div class="dock-label"><em>*</em>带*的表单</div>
+                    <div class="dock-body">
+                        <ls-input :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :offset="6" :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value1"></ls-input>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-label">文字左边</div>
+                    <div class="dock-body">
+                        <ls-input :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value2"></ls-input>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-label right">文字右边</div>
+                    <div class="dock-body">
+                        <ls-input :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value3"></ls-input>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-body full">
+                        <ls-input :placeholder="'全列展示'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value4"></ls-input>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-body full">
+                        <ls-input :placeholder="'图标框'" v-model="queryObj.value0"></ls-input>
+                        <i class="icon">&#xe61a;</i>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value5"></ls-input>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-body full">
+                        <ls-input :placeholder="'文字框'" v-model="queryObj.value0"></ls-input>
+                        <i class="txt">测试</i>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
-                <ls-input style="width: 100%;" :placeholder="'请输入文字'" v-model="queryObj.value6"></ls-input>
+            <ls-column :col="12">
+                <div class="search-form-item">
+                    <div class="dock-label block">文字右边</div>
+                    <div class="dock-body full">
+                        <ls-input :placeholder="'分行标签展示'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
             </ls-column>
-            <ls-column :col="4">
+            <ls-column :col="24">
                 <ls-button :text="'按钮'" :size="'normal'" :type="'primary'" @buttonEvent="buttonEvent"></ls-button>
+            </ls-column>
+        </ls-row>
+        <ls-row :gutter="16">
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-label"><em>*</em>带*的表单</div>
+                    <div class="dock-body">
+                        <ls-input :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
+            </ls-column>
+            <ls-column :col="6">
+                <div class="search-form-item">
+                    <div class="dock-label">文字左边</div>
+                    <div class="dock-body">
+                        <ls-input :placeholder="'请输入文字'" v-model="queryObj.value0"></ls-input>
+                    </div>
+                </div>
+            </ls-column>
+            <ls-column :col="24">
+                <div class="search-form-item">
+                    <div class="dock-body">
+                        <ls-button :text="'对齐'" :size="'normal'" :type="'primary'" @buttonEvent="buttonEvent"></ls-button>
+                    </div>
+                </div>
             </ls-column>
         </ls-row>
         <ls-row>

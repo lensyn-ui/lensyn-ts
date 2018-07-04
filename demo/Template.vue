@@ -7,7 +7,7 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import {Breadcrumb, Pagetips, Row, Column} from "../../components";
+    import {Breadcrumb, Pagetips} from "../../components";
 
     interface BreadCrumb {
         name: string;
@@ -18,9 +18,7 @@
     @Component({
         components: {
             'ls-breadcrumb': Breadcrumb,
-            'ls-pagetips': Pagetips,
-            'ls-row': Row,
-            'ls-column': Column
+            'ls-pagetips': Pagetips
         }
     })
     export default class extends Vue {

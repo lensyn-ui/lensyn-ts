@@ -86,7 +86,9 @@
         ] as any[];
         private reuqestFunc = {
             query: (params: any, success: (d: any) => void, error?: (d: any) => void) => {
-                TableApi.getData(params, (d: any) => {
+
+                /* 参数传递 */
+                TableApi.getData({page: params.page, rows: params.rows, testParam: params.testParam}, (d: any) => {
                     success({total: d.totalNumber, datas: d.list});
                 }, (d: any) => {
                     error && error(d);
@@ -97,7 +99,9 @@
         private mounted(): void {
             this.readFile('../demo/table/paging.vue');
             this.getData();
-            (this.$refs.ajaxGridNode as any).forceUpdateGrid({});
+
+            /* 带分页表格的参数数据传递 */
+            (this.$refs.ajaxGridNode as any).forceUpdateGrid({testParam: `test${Math.ceil(Math.random()*1000)}`});
         }
 
         /* 本地数据获取方法 */
