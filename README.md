@@ -112,7 +112,9 @@ Vue development package for developing large projects based on asynchronous load
 ## 项目环境安装与运行
 1. 安装开发库：
  `git clone https://github.com/lensyn-ui/lensyn-ts.git`
-2. 运行项目：
+2. 安装依赖：(需要跳转到对应的项目文件路径，开发环境依赖node8.X LTS版本，需要安装，不能用10.X版本，有兼容问题)
+ `npm install`
+3. 运行项目：(运行前确保依赖安装完成且无失败项)
  `npm run start`
-3. 打包发布命令：
+4. 打包发布命令：(发布规则为，只发布dist目录所有文件，nginx指向也指向文件所在目录)
  `npm run deploy`
