@@ -53,8 +53,16 @@
         <ls-button :text="'按钮'"
                    :size="'mini'"
                    :disabled="true"
-                   :type="'danger'">自定义
-            </ls-button>
+                   :type="'danger'"></ls-button>
+        <div class="introduce-title">自定义按钮</div>
+        <ls-button :size="'normal'"
+                   :disabled="false"
+                   :type="'primary'">
+            <div>
+                <span>自定义按钮</span>
+                <i>这里可以是icon</i>
+            </div>
+        </ls-button>
         <div class="introduce-info">
             <div class="item" v-for="item in introduceInfo">
                 <div class="title">{{item.title}}</div>
@@ -92,7 +100,7 @@
             },
             {
                 title: '参数说明',
-                desc: `text 按钮显示文字, size: （normal: 正常, big: 大, mini: 小）, disabled: 是否可以点击, type: （default: 默认（可以不传）, primary: 主要, success: 成功, warning: 警告, danger: 危险）`
+                desc: `text 按钮显示文字, size: （normal: 正常, big: 大, mini: 小）, disabled: 是否可以点击, type: （default: 默认（可以不传）, primary: 主要, success: 成功, warning: 警告, danger: 危险）；按钮支持自定义slot，只需要在ls-button标签之间传入自定义的html结构就行了。`
             },
             {
                 title: '事件说明',

@@ -65,13 +65,10 @@
 
             this.navObj = {userName: currentUser, title: 'test'} as any;
             this.menuObj = sessionStorage.getItem("menus") || "[]";
-
-            console.log(this.uInfo.name, this.testInfo);
         }
 
         /* navigator 点击事件 */
         private onClickNav(action: string) {
-            debugger;
             switch (action) {
                 case "refresh":
                     this.refreshView();

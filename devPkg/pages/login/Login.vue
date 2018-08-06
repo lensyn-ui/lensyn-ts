@@ -1,7 +1,7 @@
 <template>
     <div class="login-view">
         <div class="login-container">
-            <span class="title">用户登陆</span>
+            <span class="title">用户登录</span>
 
             <div class="login-content">
                 <input class="form-widget" placeholder="请输入用户名" v-model="userName"/>
@@ -10,7 +10,7 @@
                     <span class="checkbox" :class="{checked: isRemeberPassword}" @click="onClickRemeberPassword"></span>
                     <span class="label">记住密码</span>
                 </div>
-                <span class="button form-widget" @click="loginEvt">登陆</span>
+                <span class="button form-widget" @click="loginEvt">登录</span>
             </div>
         </div>
     </div>

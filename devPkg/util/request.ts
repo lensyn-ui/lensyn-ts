@@ -52,7 +52,7 @@ const buildRequestData = (data: RequestData): AxiosRequestConfig => {
                 let str = "";
 
                 for (let key in requestData) {
-                    if (data.hasOwnProperty(key)) {
+                    if (requestData.hasOwnProperty(key)) {
                         str += `${key}=${requestData[key]}&`;
                     }
                 }

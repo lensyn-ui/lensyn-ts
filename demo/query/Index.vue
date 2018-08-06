@@ -1,5 +1,5 @@
 /*********************************************************************
- * alarm component usage
+ * query component usage
  * Created by deming-su on 2018/6/19
  *********************************************************************/
  
@@ -122,11 +122,11 @@
         /* 重写面包屑、提示、使用说明参数 */
         breadList = [
             {name: '首页', link: '/home', id: 'breadcrumb001'},
-            {name: '确认框', link: '', id: 'breadcrumb002'}
+            {name: '表单', link: '', id: 'breadcrumb002'}
         ] as any[];
         tipsInfo = {
-            title: "提示/警示框组件的使用方法",
-            subTitle: "查看提示/警示框框组件的使用详情在‘pages/demo/alarm/Index.vue’",
+            title: "表单组件的使用方法",
+            subTitle: "查看表单组件的使用详情在‘pages/demo/query/Index.vue’",
             type: 'primary'
         } as any;
 
@@ -203,14 +203,6 @@
             } },
             { label: "创建人", field: "createUser" },
             { label: "操作", width: "200px", field: "operate", disabled: "#{id} === 2", visible: "#{id} !== 1", sub: [
-                {
-                    type: "icon",
-                    visible: "#{hello} !== '1'",
-                    directives: [{name: "tooltip", value: '开始'}],
-                    disabled: "#{id} === 4",
-                    iconClass: "demo-font",
-                    onClick: (data: any) => console.log(data)
-                },
                 {
                     type: "ls-button",
                     props: { text: "test", type: "warning", size: "mini" },

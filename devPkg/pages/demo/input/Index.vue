@@ -1,8 +1,8 @@
 /*********************************************************************
- * single select component usage
- * Created by deming-su on 2018/6/19
- *********************************************************************/
- 
+* single select component usage
+* Created by deming-su on 2018/6/19
+*********************************************************************/
+
 
 <template>
     <div>
@@ -59,11 +59,8 @@
         </div>
     </div>
 </template>
-<style>
-
-</style>
 <script lang="ts">
-    import { Vue, Component } from "vue-property-decorator";
+    import {Vue, Component} from "vue-property-decorator";
     import Template from "../Template.vue";
 
     @Component({})

@@ -204,14 +204,6 @@
             { label: "创建人", field: "createUser" },
             { label: "操作", width: "200px", field: "operate", disabled: "#{id} === 2", visible: "#{id} !== 1", sub: [
                 {
-                    type: "icon",
-                    visible: "#{hello} !== '1'",
-                    directives: [{name: "tooltip", value: '开始'}],
-                    disabled: "#{id} === 4",
-                    iconClass: "demo-font",
-                    onClick: (data: any) => console.log(data)
-                },
-                {
                     type: "ls-button",
                     props: { text: "test", type: "warning", size: "mini" },
                     style: { width: '100px' },

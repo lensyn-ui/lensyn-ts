@@ -6,11 +6,41 @@
 const MenuData: any[] = [
     {
         id: "ID001",
-        name: "首页",
-        link: "/home",
-        cls: "menu-icon menu-home",
-        icon: "&#xe622;"
-    }, {
+        name: "echarts展示",
+        link: "",
+        cls: "menu-overview",
+        icon: "&#xe622;",
+        children: [
+            {
+                id: "echarts",
+                name: "echarts展示",
+                link: "/home",
+                icon: "&#xe61a;"
+            }
+        ]
+    },
+    {
+        id: "grid",
+        name: "栅格展示",
+        link: "",
+        cls: "menu-overview",
+        icon: "&#xe622;",
+        children: [
+            {
+                id: "grid1",
+                name: "栅格",
+                link: "/grid",
+                icon: "&#xe61a;"
+            },
+            {
+                id: "grid2",
+                name: "自定义栅格",
+                link: "/gridcustom",
+                icon: "&#xe61a;"
+            }
+        ]
+    },
+    {
         id: "query",
         name: "查询展示",
         cls: "menu-overview",
@@ -53,6 +83,12 @@ const MenuData: any[] = [
                 name: "分页",
                 link: "/pagination",
                 icon: "&#xe61a;"
+            },
+            {
+                id: "ID0022",
+                name: "自定义分页",
+                link: "/paginationcustom",
+                icon: "&#xe61a;"
             }
         ]
     }, {
@@ -84,6 +120,12 @@ const MenuData: any[] = [
                 id: "ID0041",
                 name: "树",
                 link: "/tree",
+                icon: "&#xe61a;"
+            },
+            {
+                id: "ID0042",
+                name: "自定义树",
+                link: "/treecustom",
                 icon: "&#xe61a;"
             }
         ]
@@ -214,6 +256,58 @@ const MenuData: any[] = [
                 id: "ID1051",
                 name: "sideslip",
                 link: "/sideslip",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID106",
+        name: "rate star",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1061",
+                name: "ratestar",
+                link: "/ratestar",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID107",
+        name: "dropDown",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1071",
+                name: "dropDown",
+                link: "/dropdown",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID108",
+        name: "popUp",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1081",
+                name: "popUp",
+                link: "/popup",
+                icon: "&#xe61a;"
+            }
+        ]
+    }, {
+        id: "ID109",
+        name: "transfer",
+        cls: "menu-overview",
+        link: "",
+        children: [
+            {
+                id: "ID1091",
+                name: "transfer",
+                link: "/transfer",
                 icon: "&#xe61a;"
             }
         ]

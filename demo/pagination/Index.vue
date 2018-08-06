@@ -52,7 +52,7 @@
     import { Vue, Component } from "vue-property-decorator";
     import Template from "../Template.vue";
 
-    @Component({})
+    @Component
     export default class extends Template {
         /* 重写面包屑、提示、使用说明参数 */
         breadList = [
@@ -102,7 +102,7 @@
             {id: 'paggingProp004', name: '是否显示条数选择框', value: 'isItemShow'}
         ] as any[];
         private nowProp: string[] = ["isShowTotal"];
-        private displayLists: any[] = [{label: '30条', value: 30},{label: '80条', value: 80},{label: '120条', value: 120}] as any[];
+        private displayLists: any[] = [{label: '30', value: 30},{label: '80', value: 80},{label: '120', value: 120}] as any[];
 
         /* 获取当前属性 */
         private get getNowProp(): any {
