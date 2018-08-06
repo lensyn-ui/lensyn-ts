@@ -1,8 +1,8 @@
 /*********************************************************************
- * checkbox component usage
- * Created by deming-su on 2018/6/19
- *********************************************************************/
- 
+* checkbox component usage
+* Created by deming-su on 2018/6/19
+*********************************************************************/
+
 
 <template>
     <div>
@@ -11,22 +11,22 @@
         <div class="introduce-title">单选/多选</div>
         <ls-row>
             <ls-column :col="12">
-                <ls-check-box v-for="(item,index) in multipleList"
+                <ls-checkbox v-for="(item,index) in checkArr"
+                             v-model="item.checked"
                              :key="index"
-                             :checked="item.checked"
                              :disabled="item.disabled"
                              :label="item.label"
-                             @checkboxEvent="checkEvt"
-                ></ls-check-box>
+                             @checkboxEvent="checkEvt($event,item)"
+                ></ls-checkbox>
             </ls-column>
             <ls-column :col="12">
+                <!--value需要是唯一标识-->
                 <ls-radio v-for="(item,index) in radioArr"
                           :key="index"
-                          :checked="item.checked"
+                          v-model="item.checked"
                           :name="item.name"
-                          :value="item.value"
                           :label="item.label"
-                          @radioEvent="radioEvt"
+                          @radioEvent="radioEvt($event,item)"
                 ></ls-radio>
             </ls-column>
         </ls-row>
@@ -36,16 +36,13 @@
                 <div class="desc" v-html="item.desc"></div>
             </div>
         </div>
-        <div class="introduce-info">
-            <pre v-html="nowText"></pre>
-        </div>
     </div>
 </template>
 <style>
 
 </style>
 <script lang="ts">
-    import { Vue, Component, Watch } from "vue-property-decorator";
+    import {Vue, Component, Watch} from "vue-property-decorator";
     import Template from "../Template.vue";
 
     @Component({})
@@ -88,21 +85,17 @@
          * @param multipleList 下拉框选择数据列表
          * @param nowPick 下拉框当前选择数据
          */
-        private multipleList: any[] = [
+        private checkArr: any[] = [
             {label: '测试1', checked: false, disabled: false},
             {label: '测试2', checked: true},
             {label: '测试3', checked: true, disabled: true},
             {label: '测试4', checked: false, disabled: true}
         ] as any[];
+
         private radioArr: any[] = [
             {label: '男', checked: true, name: 'sex', value: 0},
             {label: '女', checked: false, name: 'sex', value: 1},
         ] as any[];
-
-
-        private mounted(): void {
-            this.readFile('../demo/checkbox/Index.vue');
-        }
 
         /* checkbox点击事件 */
         private checkEvt(event: Event, item: any): void {
@@ -110,10 +103,14 @@
         }
 
         /* radiobox点击事件 */
-        private radioEvt(item: any): void {
-            this.radioArr.map((it: any) => {
-                it.checked = item.value === it.value;
+        private radioEvt($event: any, item: any): void {
+            this.radioArr.map((it) => {
+                it.checked = false;
+                if (it.value === item.value) {
+                    it.checked = $event.checked;
+                }
             });
+            console.log(this.radioArr);
         }
     }
 </script>

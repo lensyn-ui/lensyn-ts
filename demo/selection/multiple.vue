@@ -1,7 +1,7 @@
 /*********************************************************************
- * multiple select component usage
- * Created by deming-su on 2018/6/19
- *********************************************************************/
+* multiple select component usage
+* Created by deming-su on 2018/6/19
+*********************************************************************/
 
 
 <template>
@@ -21,6 +21,23 @@
                                     :datas="testDatas"
                                     v-model="nowTestPick"></ls-multiple-select>
             </ls-column>
+            <ls-column :col="8">
+                <ls-multiple-select
+                        valueProperty="star"
+                        v-model="levelSelectValue"
+                        :userCustomList="true"
+                        :datas="levelSelectDatas">
+                    <ls-select-item v-for="item in levelSelectDatas"
+                                    :key="item.id"
+                                    :value="item.star"
+                                    :id="item.id">
+                        <div class="rate-select">
+                            <ls-rate :value="item.star"></ls-rate>
+                        </div>
+                    </ls-select-item>
+
+                </ls-multiple-select>
+            </ls-column>
         </ls-row>
 
         <div class="introduce-info">
@@ -28,9 +45,6 @@
                 <div class="title">{{item.title}}</div>
                 <div class="desc" v-html="item.desc"></div>
             </div>
-        </div>
-        <div class="introduce-info">
-            <pre v-html="nowText"></pre>
         </div>
     </div>
 </template>
@@ -96,10 +110,13 @@
         ] as any[];
         private nowPick: string[] = ['select-5'];
         private nowTestPick: string[] = ['005'];
-
-
-        private mounted(): void {
-            this.readFile('../demo/selection/multiple.vue');
-        }
+        private  levelSelectValue = [];
+        private levelSelectDatas = [
+            { id: 1, star: 1, name: "1" },
+            { id: 2, star: 2, name: "2" },
+            { id: 3, star: 3, name: "3" },
+            { id: 4, star: 4, name: "4" },
+            { id: 5, star: 5, name: "5" }
+        ];
     }
 </script>

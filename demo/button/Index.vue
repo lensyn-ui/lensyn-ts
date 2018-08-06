@@ -1,8 +1,8 @@
 /*********************************************************************
- * date picker component usage
- * Created by deming-su on 2018/6/19
- *********************************************************************/
- 
+* date picker component usage
+* Created by deming-su on 2018/6/19
+*********************************************************************/
+
 
 <template>
     <div>
@@ -53,8 +53,16 @@
         <ls-button :text="'按钮'"
                    :size="'mini'"
                    :disabled="true"
-                   :type="'danger'">自定义
-            </ls-button>
+                   :type="'danger'"></ls-button>
+        <div class="introduce-title">自定义按钮</div>
+        <ls-button :size="'normal'"
+                   :disabled="false"
+                   :type="'primary'">
+            <div>
+                <span>自定义按钮</span>
+                <i>这里可以是icon</i>
+            </div>
+        </ls-button>
         <div class="introduce-info">
             <div class="item" v-for="item in introduceInfo">
                 <div class="title">{{item.title}}</div>

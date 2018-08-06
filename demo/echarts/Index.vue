@@ -1,8 +1,6 @@
 /*********************************************************************
 * Created by deming-su on 2018/5/3                                   
  *********************************************************************/
- 
-
 <template>
     <div class="home-container">
         <ls-row :gutter="10">
@@ -35,12 +33,9 @@
             <div class="item">
                 <div class="title">参数说明</div>
                 <div class="desc">
-                    echarts引入及使用方式方式直接参考以下文件代码。
+                    echarts引入方式直接参考以下文件代码。
                 </div>
             </div>
-        </div>
-        <div class="introduce-info">
-            <pre v-html="nowText"></pre>
         </div>
     </div>
 </template>
@@ -77,7 +72,6 @@
             /* 渲染和初始化雨量 chart对象 */
             if(!this.rainChat) this.rainChat = echarts.init(this.$refs.rainNode as HTMLDivElement);
             this.initRainChart();
-            this.readFile('../demo/echarts/Index.vue');
         }
 
         /* 渲染雨量 chart对象 */

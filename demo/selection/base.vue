@@ -113,7 +113,6 @@
         private nowTestPick: string = '005';
 
         private filterFunc(item: any, val: string): boolean {
-            debugger;
             return item.filter && item.filter.toLowerCase().indexOf(val && val.toLowerCase()) > -1;
         }
 
@@ -123,8 +122,7 @@
 
         /* 点击事件 */
         private itemPickEvt(item: any): void {
-            debugger;
-            console.log(item);
+
         }
     }
 </script>

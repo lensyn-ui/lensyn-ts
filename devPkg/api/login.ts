@@ -9,7 +9,7 @@ import { UrlConfig } from "../config";
 import axios, {AxiosRequestConfig} from "axios";
 
 /**
- * 用户登陆
+ * 用户登录
  * @param {object} data
  * @param {function} success
  * @param {function} error
